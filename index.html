@@ -32,13 +32,13 @@
 
         <!-- Introduction Section -->
         <section class="introduction">
-            <h2 class="intro-heading">About</h2>
+            <h2 class="intro-heading">About Me</h2>
             <p class="intro-text">
-                Second-year Computer Science student at Huachiew Chalermprakiet University, specializing in Artificial Intelligence. I'm passionate on data analytics, with a growing interest in security and analytics.
+                Second-year Computer Science student at Huachiew Chalermprakiet University, specializing in Artificial Intelligence. I'm passionate about on data analytics, with a growing interest in security and research engineering.
             </p>
             <h2 class="intro-heading">Career Goal</h2>
             <p class="intro-text">
-                My goal is to become a senior professional in the fields of cybersecurity and data analyst, focusing on building intelligent and secure systems through continuous learning and research.
+                My goal is to become a senior professional in the fields of cybersecurity and research engineering, focusing on building intelligent and secure systems through continuous learning and research.
             </p>
         </section>
 
@@ -49,11 +49,63 @@
             <h3 class="section-title">Work</h3>
             <div class="pdf-container">
                 <div class="pdf-controls">
-                    <a href="evre.pdf" download="evre.pdf" class="download-btn">📥 Download PDF</a>
+                    <!-- Four static thumbnail images (do NOT link to PDF) -->
+                    <img src="a.png" alt="Preview A" class="pdf-thumb">
+                    <img src="b.png" alt="Preview B" class="pdf-thumb">
+                    <img src="c.png" alt="Preview C" class="pdf-thumb">
+                    <img src="d.png" alt="Preview D" class="pdf-thumb">
+
+                    <!-- Main link to view the full PDF -->
+                    <div style="margin-top:10px; width:100%;">
+                        <a href="evre.pdf" target="_blank" rel="noopener noreferrer" class="download-btn" style="margin-left:0;">🔍 See full pdf</a>
+                    </div>
                 </div>
-                <iframe src="evre.pdf#toolbar=1" class="pdf-viewer-iframe" title="Work Experience PDF"></iframe>
+                <!-- Google Docs Viewer iframe; src set by script below to an absolute URL -->
+                <iframe id="pdfViewer" src="about:blank" class="pdf-viewer-iframe" title="Work Experience PDF (Google Docs Viewer)"></iframe>
+                <p id="pdfFallback" style="padding:20px 30px; color:#666; display:none;">If the preview doesn't work, use the "Open in new tab" button or download the PDF.</p>
             </div>
         </section>
+
+        <script>
+            (function() {
+                // Build an absolute URL for the PDF relative to this page
+                try {
+                    var pdfRelative = 'evre.pdf';
+                    var absUrl = new URL(pdfRelative, window.location.href).href;
+
+                    // Google Docs viewer requires a publicly accessible absolute URL
+                    var gdocs = 'https://docs.google.com/gview?url=' + encodeURIComponent(absUrl) + '&embedded=true';
+                    var viewer = document.getElementById('pdfViewer');
+                    var fallback = document.getElementById('pdfFallback');
+
+                    // If page is opened locally (file://) the Google viewer cannot fetch the file
+                    if (window.location.protocol === 'file:') {
+                        viewer.style.display = 'none';
+                        fallback.style.display = 'block';
+                        return;
+                    }
+
+                    // Set iframe src to Google Docs viewer
+                    viewer.src = gdocs;
+
+                    // Optionally, if the iframe fails to load (CORS or blocked), show fallback after a timeout
+                    setTimeout(function() {
+                        // If iframe still has about:blank or a blank contentWindow, show fallback note
+                        if (!viewer.src || viewer.src.indexOf('about:blank') !== -1) {
+                            viewer.style.display = 'none';
+                            fallback.style.display = 'block';
+                        }
+                    }, 2000);
+                } catch (e) {
+                    // On error, hide iframe and show fallback
+                    var v = document.getElementById('pdfViewer');
+                    var f = document.getElementById('pdfFallback');
+                    if (v) v.style.display = 'none';
+                    if (f) { f.style.display = 'block'; f.textContent = 'PDF preview not available; please use the Open in new tab button.'; }
+                    console.warn('PDF viewer init error:', e);
+                }
+            })();
+        </script>
 
         <hr class="section-divider">
 
@@ -61,7 +113,7 @@
         <section class="skills-section">
             <div class="desired-job">
                 <h3 class="section-title">Desired Position</h3>
-                <p class="job-title">Specialized in Data Analyst and Cybersecurity</p>
+                <p class="job-title">Specialized in Research Engineering and Cybersecurity</p>
             </div>
             <div class="key-technologies">
                 <h3 class="section-title">Key Technologies</h3>
@@ -181,13 +233,10 @@
         <section class="links-section">
             <h3 class="section-title">Links</h3>
             <div class="links-list">
-                <p class="link-placeholder">https://github.com/johallconstants-sketch</p>
+                <p class="link-placeholder">Add your GitHub, LinkedIn, or portfolio links here</p>
             </div>
         </section>
     </div>
 </body>
 </html>
-
-
-
 
