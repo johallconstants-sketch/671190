@@ -60,52 +60,8 @@
                         <a href="evre.pdf" target="_blank" rel="noopener noreferrer" class="download-btn" style="margin-left:0;">🔍 See full pdf</a>
                     </div>
                 </div>
-                <!-- Google Docs Viewer iframe; src set by script below to an absolute URL -->
-                <iframe id="pdfViewer" src="about:blank" class="pdf-viewer-iframe" title="Work Experience PDF (Google Docs Viewer)"></iframe>
-                <p id="pdfFallback" style="padding:20px 30px; color:#666; display:none;">If the preview doesn't work, use the "Open in new tab" button or download the PDF.</p>
             </div>
         </section>
-
-        <script>
-            (function() {
-                // Build an absolute URL for the PDF relative to this page
-                try {
-                    var pdfRelative = 'evre.pdf';
-                    var absUrl = new URL(pdfRelative, window.location.href).href;
-
-                    // Google Docs viewer requires a publicly accessible absolute URL
-                    var gdocs = 'https://docs.google.com/gview?url=' + encodeURIComponent(absUrl) + '&embedded=true';
-                    var viewer = document.getElementById('pdfViewer');
-                    var fallback = document.getElementById('pdfFallback');
-
-                    // If page is opened locally (file://) the Google viewer cannot fetch the file
-                    if (window.location.protocol === 'file:') {
-                        viewer.style.display = 'none';
-                        fallback.style.display = 'block';
-                        return;
-                    }
-
-                    // Set iframe src to Google Docs viewer
-                    viewer.src = gdocs;
-
-                    // Optionally, if the iframe fails to load (CORS or blocked), show fallback after a timeout
-                    setTimeout(function() {
-                        // If iframe still has about:blank or a blank contentWindow, show fallback note
-                        if (!viewer.src || viewer.src.indexOf('about:blank') !== -1) {
-                            viewer.style.display = 'none';
-                            fallback.style.display = 'block';
-                        }
-                    }, 2000);
-                } catch (e) {
-                    // On error, hide iframe and show fallback
-                    var v = document.getElementById('pdfViewer');
-                    var f = document.getElementById('pdfFallback');
-                    if (v) v.style.display = 'none';
-                    if (f) { f.style.display = 'block'; f.textContent = 'PDF preview not available; please use the Open in new tab button.'; }
-                    console.warn('PDF viewer init error:', e);
-                }
-            })();
-        </script>
 
         <hr class="section-divider">
 
