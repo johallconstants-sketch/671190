@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px 20px 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Background Banner */
+.banner-background {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 0 30px;
+    position: relative;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.main-name {
+    font-size: 48px;
+    font-weight: 300;
+    color: #cccccc;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.contact-info {
+    color: #666666;
+    font-size: 14px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.korean-name-box {
+    background-color: #90EE90;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.korean-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.profile-picture {
+    width: 160px;
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    position: relative;
+    top: -40px;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Section Divider */
+.section-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 30px 30px;
+}
+
+/* Introduction Section */
+.introduction {
+    margin: 30px 0;
+    padding: 0 30px;
+}
+
+.intro-heading {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+.intro-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 25px;
+}
+
+/* Skills Section */
+.skills-section {
+    margin: 30px 0;
+    padding: 0 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.desired-job {
+    margin-bottom: 40px;
+}
+
+.job-title {
+    font-size: 16px;
+    color: #555555;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tech-icon {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.tech-icon.vue {
+    background-color: #4FC08D;
+}
+
+.tech-icon.js {
+    background-color: #F7DF1E;
+    color: #333333;
+}
+
+.tech-icon.ts {
+    background-color: #3178C6;
+}
+
+.tech-icon.react {
+    background-color: #61DAFB;
+    color: #333333;
+}
+
+.tech-icon.figma {
+    background-color: #F24E1E;
+}
+
+.tech-icon.cpp {
+    background-color: #00599C;
+}
+
+.tech-icon.c {
+    background-color: #A8B9CC;
+}
+
+.tech-icon.java {
+    background-color: #ED8B00;
+}
+
+.tech-icon.css {
+    background-color: #1572B6;
+}
+
+.tech-icon.html {
+    background-color: #E34F26;
+}
+
+.tech-icon.python {
+    background-color: #3776AB;
+}
+
+.tech-icon.pandas {
+    background-color: #2CAAE2;
+}
+
+.tech-icon.jupyter {
+    background-color: #F37626;
+}
+
+.tech-icon.jupyterlab {
+    background-color: #F37626;
+}
+
+.tech-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tech-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.proficiency {
+    display: flex;
+    gap: 5px;
+}
+
+.proficiency-label {
+    font-size: 11px;
+    padding: 2px 6px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    color: #999999;
+    background-color: #ffffff;
+}
+
+.proficiency-label.active {
+    background-color: #3178C6;
+    color: #ffffff;
+    border-color: #3178C6;
+}
+
+/* Experience Section */
+.experience-section {
+    margin: 30px 0;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.company-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.duration {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Work Experience Section */
+.work-experience-section {
+    margin: 30px 0;
+    padding: 0 30px;
+}
+
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pdf-controls {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #3178C6;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #1e5a9e;
+}
+
+.pdf-viewer-iframe {
+    width: 100%;
+    min-height: 600px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: block;
+    background-color: #f5f5f5;
+}
+
+/* Education Section */
+.education-section {
+    margin: 30px 0;
+    padding: 0 30px;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.school-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.school-details {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Links Section */
+.links-section {
+    margin: 30px 0;
+    padding: 0 30px 30px 30px;
+}
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-item {
+    font-size: 14px;
+    color: #3178C6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-item:hover {
+    color: #1e5a9e;
+    text-decoration: underline;
+}
+
+.link-placeholder {
+    font-size: 14px;
+    color: #999999;
+    font-style: italic;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+        top: -20px;
+        margin: 0 auto;
+    }
+}
+
+    .banner-background {
+        height: 180px;
+        border-radius: 4px 4px 0 0;
+    }
+    
+    .banner-image {
+        min-height: 180px;
+    }
+
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 0 30px;
+    position: relative;
+}
+    
+    .introduction,
+    .skills-section,
+    .work-experience-section,
+    .education-section,
+    .links-section {
+        padding: 0 20px;
+    }
+    
+    .section-divider {
+        margin: 30px 20px;
+    }
+
+    .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: -60px;
+}
+
+    .main-name {
+        font-size: 36px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-picture {
+    width: 160px;
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+    .pdf-viewer-iframe {
+        min-height: 400px;
+    }
+
+    .pdf-controls {
+        justify-content: center;
+    }
+
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
